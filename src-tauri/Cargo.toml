@@ -1,0 +1,21 @@
+[package]
+name = "lab-manager"
+version = "0.1.0"
+description = "Laboratory Manager is a program for accounting for material support, as well as reactive support analysis."
+authors = ["0xDimay <HexDimay@yandex.ru>"]
+edition = "2024"
+rust-version = "1.94.0"
+license = "Apache-2.0"
+
+[lib]
+name = "lab_manager_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
