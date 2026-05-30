@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Inter';
-  src: url(/fonts/Inter.ttc);
+  src: url(../assets/fonts/Inter.ttc);
 }
 
 * {
@@ -11,15 +11,6 @@
 
 html, body, #app {
   height: 100%;
+  width: 100%;
 }
 
-.nav-bar {
-  background-color: #272b38;
-  border-right: 1px solid #4e5466;
-}
-
-.tabs {
-  height: 44px;
-  background-color: #1e222b;
-  border-bottom: 1px solid #4e5466;
-}

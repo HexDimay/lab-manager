@@ -1,24 +1,11 @@
 <script setup lang="ts">
+import Tabs from './components/Tabs.vue';
+
 
 </script>
 
 <template>
-  <el-container style="height: 100%;">
-      <el-aside class="nav-bar" width="64px">
-        
-      </el-aside>
-      <el-container>
-        <el-header class="tabs">
-          
-        </el-header>
-        <el-main>
-          
-        </el-main>
-      </el-container>
-    </el-container>
+  <Tabs />
 </template>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
