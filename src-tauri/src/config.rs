@@ -32,14 +32,17 @@ impl Config {
         }
     }
 
+    /// Getting the current database is given _if it has been selected_.
     pub fn get_current_database(&self) -> Option<&PathBuf> {
         self.current_database.as_ref()
     }
 
+    /// Get the entire list of available databases.
     pub fn get_list_database(&self) -> &HashMap<String, PathBuf> {
         &self.list_db
     }
 
+    /// Selecting the current database.
     pub fn select_database(&mut self, name: &str) -> anyhow::Result<()> {
         let path = self
             .list_db
@@ -50,6 +53,8 @@ impl Config {
         Ok(())
     }
 
+    /// Scans all database files in the root directory,
+    /// and then saves the data to a config file.
     pub fn scan_databases(&mut self) -> anyhow::Result<()> {
         self.list_db.clear();
 
@@ -71,6 +76,7 @@ impl Config {
         Ok(())
     }
 
+    /// It should be called whenever the config file is changed, in order to save data for future sessions.
     fn save_data(&self) -> anyhow::Result<()> {
         std::fs::write(PATH_CONFIG, serde_json::to_string(self)?)?;
         Ok(())
